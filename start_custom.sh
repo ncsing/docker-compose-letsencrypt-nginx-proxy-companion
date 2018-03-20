@@ -14,6 +14,6 @@ docker run -d \
 --network=webproxy \
 nginx-redirect
 docker exec ${HOSTNAME} /bin/bash /custom.sh
-docker exec ${HOSTNAME} mv /custom.conf /etc/nginx/conf.d/
+docker exec ${HOSTNAME} mv /custom.conf /etc/nginx/conf.d/default.conf
 
 exit 0
