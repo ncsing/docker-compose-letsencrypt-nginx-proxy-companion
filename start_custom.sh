@@ -11,6 +11,7 @@ docker run -d \
 -e REDIRECT_HOST=${HOSTNAME} \
 -e REDIRECT_IP=${IP} \
 -e VIRTUAL_HOST=${HOSTNAME} \
+--network=webproxy \
 nginx-redirect
 docker exec ${HOSTNAME} /bin/bash /custom.sh
 docker exec ${HOSTNAME} mv /custom.conf /etc/nginx/conf.d/
