@@ -17,5 +17,6 @@ nginx-redirect
 docker exec ${HOSTNAME} /bin/bash /custom.sh
 docker exec ${HOSTNAME} rm -f /etc/nginx/conf.d/default.conf
 docker exec ${HOSTNAME} mv /custom.conf /etc/nginx/conf.d/default.conf
+docker exec ${HOSTNAME} sed -i '10,13d' /etc/nginx/conf.d/default.conf
 
 exit 0
