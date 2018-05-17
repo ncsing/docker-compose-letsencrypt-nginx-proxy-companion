@@ -213,6 +213,11 @@ Or simply run:
 docker stop test-web && docker rm test-web 
 ```
 
+For some who need redirect to other machines
+```
+./start_custom.sh www.example.com 123.456.789 contact@example.com
+```
+
 ## Production Environment using Web Proxy and Wordpress
 
 1. [docker-wordpress-letsencrypt](https://github.com/evertramos/docker-wordpress-letsencrypt)
