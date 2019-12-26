@@ -202,6 +202,17 @@ Or as of below:
 docker run [...] -e VIRTUAL_PORT=8545 [...]
 ```
 
+4. Restarting proxy container
+
+In some cases you will need to restart the proxy in order to read, as an example, the Basic Auth, if you set it after your service container is already up and running. So, the way I use to restart the proxy (NGINX) is as following, which has no downtime:
+
+```bash
+docker exec -it ${NGINX_WEB} nginx -s reload
+```
+
+Where *${NGINX_WEB}* is your proxy container name, which in the original `.env` file is set as *nginx-web*.
+
+
 ## Testing your proxy with scripts preconfigured 
 
 1. Run the script `test.sh` informing your domain already configured in your DNS to point out to your server as follow:
@@ -244,6 +255,8 @@ Please checkout this [howto](https://github.com/evertramos/docker-compose-letsen
 1. [docker-wordpress-letsencrypt](https://github.com/evertramos/docker-wordpress-letsencrypt)
 2. [docker-portainer-letsencrypt](https://github.com/evertramos/docker-portainer-letsencrypt)
 3. [docker-nextcloud-letsencrypt](https://github.com/evertramos/docker-nextcloud-letsencrypt)
+4. [docker-registry-letsencrypt](https://github.com/evertramos/docker-registry-letsencrypt)
+5. [gitlab-docker-letsencrypt](https://github.com/steevepay/gitlab-docker-letsencrypt)
 
 In this repo you will find a docker-compose file to start a production environment for a new wordpress site.
 
@@ -263,3 +276,8 @@ Credits goes to:
 - [@buchdag](https://github.com/JrCs/docker-letsencrypt-nginx-proxy-companion/pull/226#event-1145800062)
 - [@fracz](https://github.com/fracz) - Many contributions!
 
+
+## Support on Beerpay
+Hey dude! Help me out for a couple of :beers:!
+
+[![Beerpay](https://beerpay.io/evertramos/docker-compose-letsencrypt-nginx-proxy-companion/badge.svg?style=beer-square)](https://beerpay.io/evertramos/docker-compose-letsencrypt-nginx-proxy-companion)  [![Beerpay](https://beerpay.io/evertramos/docker-compose-letsencrypt-nginx-proxy-companion/make-wish.svg?style=flat-square)](https://beerpay.io/evertramos/docker-compose-letsencrypt-nginx-proxy-companion?focus=wish)
